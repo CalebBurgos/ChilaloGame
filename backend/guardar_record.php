@@ -2,10 +2,10 @@
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 
-$host = "localhost";
-$db_name = "juego_piurano_db";
-$username = "root";
-$password = "";
+$host = "sql104.infinityfree.com";
+$db_name = "if0_42119119_juego_piurano_db";
+$username = "if0_42119119";
+$password = "CalebBurgos01";
 
 try {
     $conexion = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $username, $password);

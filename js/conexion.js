@@ -1,6 +1,6 @@
 // Función para traer los datos reales de la base de datos local
 window.cargarTablaClasificacionAsync = function() {
-    fetch("backend/guardar_record.php?obtener=1&nocache=" + Math.random()) 
+    fetch("https://if0_42119119.epizy.com/backend/guardar_record.php?obtener=1&nocache=" + Math.random())
     .then(async res => {
     if (!res.ok) throw new Error("Error en el servidor");
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const nombreInput = document.getElementById("nombre_jugador") ? document.getElementById("nombre_jugador").value.trim() : "";
             if (nombreInput === "") { alert("Por favor, introduce tu nombre."); return; }
 
-            fetch("backend/guardar_record.php", {
+           fetch("https://if0_42119119.epizy.com/backend/guardar_record.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json; charset=UTF-8" },
                 body: JSON.stringify({
