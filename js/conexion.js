@@ -1,4 +1,4 @@
-// Función para traer los datos reales de la base de datos local
+
 window.cargarTablaClasificacionAsync = function() {
     fetch("https://if0_42119119.epizy.com/backend/guardar_record.php?obtener=1&nocache=" + Math.random())
     .then(async res => {
@@ -14,8 +14,7 @@ window.cargarTablaClasificacionAsync = function() {
 })
     .then(data => {
         console.log("Datos recibidos en conexion.js:", data);
-        
-        // Sincronizar los récords con el array global del juego
+    
         if (data && data.records && Array.isArray(data.records)) {
             window.recordsLocales = data.records;
         } else if (data && data.data && Array.isArray(data.data)) {
@@ -29,19 +28,22 @@ window.cargarTablaClasificacionAsync = function() {
     });
 };
 
-// Configurar el envío del formulario usando los IDs reales del index.html
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("form-record");
     const modal = document.getElementById("modal-registro");
 
     if (formulario) {
         formulario.onsubmit = function(e) {
-            e.preventDefault(); // Evita que la página web se recargue por completo
+            e.preventDefault(); 
 
             const nombreInput = document.getElementById("nombre_jugador") ? document.getElementById("nombre_jugador").value.trim() : "";
             if (nombreInput === "") { alert("Por favor, introduce tu nombre."); return; }
 
+<<<<<<< HEAD
            fetch("https://if0_42119119.epizy.com/backend/guardar_record.php", {
+=======
+            fetch("https://TU-SITIO.epizy.com/backend/guardar_record.php", {
+>>>>>>> caee1b1802c5f3d8b85b1c305a435dc96a5a5810
                 method: "POST",
                 headers: { "Content-Type": "application/json; charset=UTF-8" },
                 body: JSON.stringify({
@@ -57,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log("Récord guardado correctamente");
                     if (modal) modal.style.display = "none";
                     
-                    // Cambiamos el estado de la pantalla en juego.js y refrescamos los datos
                     if (typeof window.cambiarEstadoJuego === "function") {
                         window.cambiarEstadoJuego("TABLA");
                     }
@@ -73,6 +74,5 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
     
-    // Carga inicial al cargar el index
     window.cargarTablaClasificacionAsync();
 });

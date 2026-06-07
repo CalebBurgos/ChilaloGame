@@ -6,6 +6,10 @@ $host = "sql104.infinityfree.com";
 $db_name = "if0_42119119_juego_piurano_db";
 $username = "if0_42119119";
 $password = "CalebBurgos01";
+<<<<<<< HEAD
+=======
+
+>>>>>>> caee1b1802c5f3d8b85b1c305a435dc96a5a5810
 
 try {
     $conexion = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $username, $password);
