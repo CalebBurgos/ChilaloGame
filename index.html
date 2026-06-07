@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Desafío del Chilalo Constructor</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+        <h1>🐦 El Desafío del Chilalo Constructor 🌾</h1>
+        <div class="marcador-container">
+            <div id="ui-nivel" class="hud-item">Nivel 1: Recolecta Materiales</div>
+            <div id="ui-puntos" class="hud-item">Materiales: 0/50</div>
+            <div id="ui-vidas" class="hud-item">Vidas: ❤️ ❤️ ❤️</div>
+            <div id="ui-tiempo" class="hud-item">Tiempo: 60s</div>
+        </div>
+<div style="margin-top: 10px; font-size: 13px; color: #795548; font-weight: bold;">
+    ⌨️ WASD / Flechas = Mover y saltar | 🖱️ Mouse = Mover y clic para saltar | 🔄 R = Reiniciar | 🏠 ESC = Menú
+</div>
+    </header>
+
+    <!-- El lienzo del Canvas donde ocurre la magia de los gráficos -->
+    <main>
+        <canvas id="canvasJuego" width="800" height="600"></canvas>
+    </main>
+
+    <!-- Ventana emergente (Modal) al ganar el juego para registrar datos en MySQL -->
+    <div id="modal-registro" class="modal">
+        <div class="modal-contenido">
+            <h2>¡Nido Completado con Éxito! 🎉</h2>
+            <p>Has demostrado ser un auténtico maestro constructor piurano.</p>
+            <p id="modal-resumen"></p>
+            <form id="form-record">
+                <label for="nombre_jugador">Nombre del constructor:</label>
+                <input type="text" id="nombre_jugador" required placeholder="Ej. ChurrePiurano" maxlength="50">
+                <button type="submit">Guardar Puntaje</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enlaces a los archivos de JavaScript de forma modular -->
+    <script src="js/conexion.js"></script>
+    <script src="js/juego.js"></script>
+</body>
+</html>
